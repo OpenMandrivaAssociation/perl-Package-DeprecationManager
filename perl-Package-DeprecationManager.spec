@@ -17,6 +17,7 @@ BuildRequires: perl(Sub::Install)
 BuildRequires: perl(Test::Exception)
 BuildRequires: perl(Test::More)
 BuildRequires: perl(Test::Warn)
+BuildRequires: perl(Test::Requires)
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
