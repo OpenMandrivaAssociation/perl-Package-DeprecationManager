@@ -1,5 +1,5 @@
 %define upstream_name    Package-DeprecationManager
-%define upstream_version 0.09
+%define upstream_version 0.10
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -18,6 +18,7 @@ BuildRequires: perl(Test::Exception)
 BuildRequires: perl(Test::More)
 BuildRequires: perl(Test::Warn)
 BuildRequires: perl(Test::Requires)
+BuildRequires: perl(Test::Fatal)
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
