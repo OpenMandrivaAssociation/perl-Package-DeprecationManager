@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Release:	5
 
 Summary:	Manage deprecation warnings for your distribution
 License:	GPL+ or Artistic
@@ -19,6 +19,7 @@ BuildRequires:	perl(Test::More)
 BuildRequires:	perl(Test::Warn)
 BuildRequires:	perl(Test::Requires)
 BuildRequires:	perl(Test::Fatal)
+BuildRequires:	perl(Test::Output)
 BuildRequires:	perl-devel
 BuildArch:	noarch
 
