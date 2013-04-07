@@ -20,6 +20,7 @@ BuildRequires:	perl(Test::Warn)
 BuildRequires:	perl(Test::Requires)
 BuildRequires:	perl(Test::Fatal)
 BuildRequires:	perl(Test::Output)
+BuildRequires:	perl(List::MoreUtils)
 BuildRequires:	perl-devel
 BuildArch:	noarch
 
