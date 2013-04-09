@@ -1,9 +1,9 @@
 %define upstream_name    Package-DeprecationManager
-%define upstream_version 0.11
+%define upstream_version 0.13
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Release:	1
 
 Summary:	Manage deprecation warnings for your distribution
 License:	GPL+ or Artistic
