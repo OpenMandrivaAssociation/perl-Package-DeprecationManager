@@ -1,16 +1,15 @@
-%define upstream_name    Package-DeprecationManager
-%define upstream_version 0.13
-
-Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	1
+%define modname	Package-DeprecationManager
+%define modver	0.13
 
 Summary:	Manage deprecation warnings for your distribution
-License:	GPL+ or Artistic
+Name:		perl-%{modname}
+Version:	%perl_convert_version %{modver}
+Release:	1
+License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Package/%{upstream_name}-%{upstream_version}.tar.gz
-
+Url:		http://search.cpan.org/dist/%{modname}
+Source0:	http://www.cpan.org/modules/by-module/Package/%{modname}-%{modver}.tar.gz
+BuildArch:	noarch
 BuildRequires:	perl(Carp)
 BuildRequires:	perl(Params::Util)
 BuildRequires:	perl(Sub::Install)
@@ -22,7 +21,6 @@ BuildRequires:	perl(Test::Fatal)
 BuildRequires:	perl(Test::Output)
 BuildRequires:	perl(List::MoreUtils)
 BuildRequires:	perl-devel
-BuildArch:	noarch
 
 %description
 This module allows you to manage a set of deprecations for one or more
@@ -39,7 +37,7 @@ This is useful if you don't want to deprecate an entire subroutine, just a
 certain usage.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -qn %{modname}-%{modver}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
@@ -53,41 +51,6 @@ certain usage.
 
 %files
 %doc Changes META.yml LICENSE README META.json
-%{_mandir}/man3/*
 %{perl_vendorlib}/*
+%{_mandir}/man3/*
 
-
-
-
-%changelog
-* Sun Jan 22 2012 Oden Eriksson <oeriksson@mandriva.com> 0.110.0-3mdv2012.0
-+ Revision: 765549
-- rebuilt for perl-5.14.2
-
-* Sat Jan 21 2012 Oden Eriksson <oeriksson@mandriva.com> 0.110.0-2
-+ Revision: 764066
-- rebuilt for perl-5.14.x
-
-* Wed Jun 22 2011 Guillaume Rousse <guillomovitch@mandriva.org> 0.110.0-1
-+ Revision: 686644
-- update to new version 0.11
-
-* Sat Apr 23 2011 Funda Wang <fwang@mandriva.org> 0.100.0-2
-+ Revision: 657811
-- rebuild for updated spec-helper
-
-* Sat Nov 06 2010 Guillaume Rousse <guillomovitch@mandriva.org> 0.100.0-1mdv2011.0
-+ Revision: 594298
-- new version
-
-* Tue Oct 19 2010 Guillaume Rousse <guillomovitch@mandriva.org> 0.90.0-1mdv2011.0
-+ Revision: 586816
-- new version
-
-* Tue Jul 27 2010 Jérôme Quelin <jquelin@mandriva.org> 0.40.0-1mdv2011.0
-+ Revision: 561573
-- import perl-Package-DeprecationManager
-
-
-* Tue Jul 27 2010 cpan2dist 0.04-1mdv
-- initial mdv release, generated with cpan2dist
