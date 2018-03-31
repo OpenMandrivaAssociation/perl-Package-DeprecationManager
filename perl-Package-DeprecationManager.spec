@@ -1,24 +1,30 @@
+# Tests may fail because of circular dependencies while
+# bootstrapping
+%bcond_with check
+
 %define modname	Package-DeprecationManager
-%define modver	0.13
 
 Summary:	Manage deprecation warnings for your distribution
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	10
+Version:	0.17
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/Package/%{modname}-%{modver}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Package/%{modname}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Carp)
 BuildRequires:	perl(Params::Util)
 BuildRequires:	perl(Sub::Install)
+%if %{with check}
 BuildRequires:	perl(Test::Exception)
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl(Test::Warn)
 BuildRequires:	perl(Test::Requires)
 BuildRequires:	perl(Test::Fatal)
 BuildRequires:	perl(Test::Output)
+BuildRequires:	perl(Package::Stash)
+%endif
 BuildRequires:	perl(List::MoreUtils)
 BuildRequires:	perl-devel
 
@@ -37,20 +43,21 @@ This is useful if you don't want to deprecate an entire subroutine, just a
 certain usage.
 
 %prep
-%setup -qn %{modname}-%{modver}
+%setup -qn %{modname}-%{version}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
 %make
 
+%if %{with check}
 %check
 %make test
+%endif
 
 %install
 %makeinstall_std
 
 %files
-%doc Changes META.yml LICENSE README META.json
+%doc Changes META.yml LICENSE META.json
 %{perl_vendorlib}/*
 %{_mandir}/man3/*
-
