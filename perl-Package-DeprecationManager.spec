@@ -7,10 +7,10 @@
 Summary:	Manage deprecation warnings for your distribution
 Name:		perl-%{modname}
 Version:	0.17
-Release:	4
+Release:	5
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{modname}
+Url:		http://metacpan.org/pod/Package::DeprecationManager
 Source0:	http://www.cpan.org/modules/by-module/Package/%{modname}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Carp)
