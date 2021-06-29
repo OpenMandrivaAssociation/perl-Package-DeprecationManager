@@ -7,7 +7,7 @@
 Summary:	Manage deprecation warnings for your distribution
 Name:		perl-%{modname}
 Version:	0.17
-Release:	5
+Release:	6
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://metacpan.org/pod/Package::DeprecationManager
@@ -43,7 +43,7 @@ This is useful if you don't want to deprecate an entire subroutine, just a
 certain usage.
 
 %prep
-%setup -qn %{modname}-%{version}
+%autosetup -p1 -n %{modname}-%{version}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
