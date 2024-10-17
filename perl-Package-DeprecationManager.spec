@@ -10,7 +10,7 @@ Version:	0.18
 Release:	2
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		http://metacpan.org/pod/Package::DeprecationManager
+Url:		https://metacpan.org/pod/Package::DeprecationManager
 Source0:	http://www.cpan.org/modules/by-module/Package/%{modname}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Carp)
