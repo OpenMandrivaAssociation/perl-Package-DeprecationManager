@@ -7,7 +7,7 @@
 Summary:	Manage deprecation warnings for your distribution
 Name:		perl-%{modname}
 Version:	0.18
-Release:	2
+Release:	3
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/Package::DeprecationManager
